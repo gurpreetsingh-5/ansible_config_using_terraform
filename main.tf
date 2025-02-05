@@ -52,7 +52,7 @@ resource "aws_instance" "myinst2" {
         "Name" = "worker2" 
     } 
     depends_on = [ aws_key_pair.myawskey ]
-    security_groups = [ "all-trafiic" ] 
+    security_groups = [ "all-traffic" ] 
        user_data  = <<-EOF
                               #!/bin/bash
                               hostnamectl set-hostname worker2
