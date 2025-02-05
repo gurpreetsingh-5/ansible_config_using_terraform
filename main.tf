@@ -15,12 +15,12 @@ resource "aws_instance" "myinst" {
     }
     provisioner "file" {
         source = "/home/gur/.ssh/id_rsa"
-        destination = "/home/gur/.ssh/id_rsa"   
+        destination = "/home/ubuntu/.ssh/id_rsa"   
     }
 
     provisioner "remote-exec" {
       inline = [ "sudo hostnamectl set-hostname master ",
-      "chmod 400 /home/gur/.ssh/id_rsa"  ]
+      "chmod 400 /home/ubuntu/.ssh/id_rsa"  ]
     }
     user_data = <<-EOF
                             #!/bin/bash
